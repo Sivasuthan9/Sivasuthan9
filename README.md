@@ -2,21 +2,23 @@
 <!--p align="center">
   <img width="300" src="./doc/istock-1200937823.jpg"> <!--datascientist.png>
 </p-->
-<p align="center">
-  <img src="./docs/hiiii.png" width="380" height="200" />
-</p>
 
-<h3 align="center">
-  Hey there 🤙
-  <!--img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="-10px"/-->
+<div align="center">
 
-  <!-- <br /> <br />
-  <img src="https://komarev.com/ghpvc/?username=sivasuthan9&style=flat-square&color=blue" alt="views" width="200px"/>
-</h3> -->
+<h3>Hey there 🙋‍♂️</h3>
+
+I am a dedicated Engineering student passionate about machine learning, data analysis, and AI. My coursework has provided a solid foundation in both theoretical and practical engineering aspects.
+
+</div>
 
 
 
-### Connect with Me :<img src="./doc/Connect-With-Me.gif" alt="drawing" width="50"/>
+
+
+<div align="center">
+
+### Connect with Me 🌐   <img src="./doc/Connect-With-Me.gif" alt="drawing" width="50"/>
+
 <div id="badges">
   <a href="https://www.linkedin.com/in/sivasuthan-sukumar/">
     <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
@@ -33,7 +35,8 @@
   <a href="https://www.kaggle.com/sivasuthan27">
     <img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=Kaggle&logoColor=white" alt="Kaggle Badge"/>
   </a>
-  
+</div>
+
 </div>
 
 ---
@@ -63,9 +66,16 @@
 
 ---
 
-### 🔥 My Stats :
+<div align="center">
 
-|[![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=sivasuthan9&theme=light&background=ffffff)](https://git.io/streak-stats)|[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=sivasuthan9&layout=compact&theme=vision-friendly-light)](https://github.com/anuraghazra/github-readme-stats)|
+### 🔥 My Stats 
+
+|![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=sivasuthan9&theme=buefy&show_icons=true&card_width=400&hide_title=true)|[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=sivasuthan9&layout=compact&theme=vision-friendly-light&card_width=400&hide_title=true)](https://github.com/anuraghazra/github-readme-stats)|
 |------|----|
-|![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=sivasuthan9&theme=buefy&show_icons=true)|[![Ryo-ma's github trophy](https://github-profile-trophy.vercel.app/?username=sivasuthan9&row=2&column=3)](https://github.com/ryo-ma/github-profile-trophy)|
+
+</div>
+
+
+
+
 
