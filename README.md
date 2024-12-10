@@ -2,7 +2,7 @@
 <!--p align="center">
   <img width="300" src="./doc/istock-1200937823.jpg"> <!--datascientist.png>
 </p-->
-|<img width="450" src="./docs/Etapas-do-Data-Science-para-aplicar-na-sua-empresa.gif">|
+|<img width="450" src="./docs/Etapas-do-Data-Science-para-aplicar-na-sua-empresa.gif">|<img width="400" src="./docs/7e0bdda6534cc68c4e8258ad1c6ea183.gif">|
 |-----|-----|
 <h3 align="center">
   Hey there 🤙
