@@ -2,8 +2,10 @@
 <!--p align="center">
   <img width="300" src="./doc/istock-1200937823.jpg"> <!--datascientist.png>
 </p-->
-|<img width="380" height="200" src="./docs/Etapas-do-Data-Science-para-aplicar-na-sua-empresa.gif">|<img width="380" height="200" src="./docs/7e0bdda6534cc68c4e8258ad1c6ea183.gif">|
-|-----|-----|
+<p align="center">
+  <img src="./docs/hiiii.png" width="380" height="200" />
+</p>
+
 <h3 align="center">
   Hey there 🤙
   <!--img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="-10px"/-->
