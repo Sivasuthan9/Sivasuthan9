@@ -68,7 +68,7 @@ I’m a creative and dedicated engineering undergraduate passionate about AI, Ed
 
 <div align="center">
 
-### 🔥 My Stats 
+###  My Stats 
 
 ![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=sivasuthan9&theme=buefy&show_icons=true&include_all_commits=true&hide_rank=true) |[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=sivasuthan9&layout=compact&theme=vision-friendly-light&card_width=400&hide_title=true)](https://github.com/anuraghazra/github-readme-stats)|
 |------|----|
