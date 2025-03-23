@@ -7,7 +7,7 @@
 
 <h3>Hey there 🙋‍♂️</h3>
 
-I am a dedicated Engineering student passionate about machine learning, data analysis, and AI. My coursework has provided a solid foundation in both theoretical and practical engineering aspects.
+I’m a creative and dedicated engineering undergraduate passionate about AI, Edge Computing, Cloud Computing and IoT. I love solving real-world problems through software and innovation, aiming to make a meaningful impact in technology.
 
 </div>
 
@@ -29,9 +29,9 @@ I am a dedicated Engineering student passionate about machine learning, data ana
   <a href="https://wa.me/94750159605">
     <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="Whatsapp Badge"/>
   </a>
-  <a href="https://medium.com/@sivasuthansukumar">
+<!--   <a href="https://medium.com/@sivasuthansukumar">
     <img src="https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white" alt="Medium Badge"/>
-  </a>
+  </a> -->
   <a href="https://www.kaggle.com/sivasuthan27">
     <img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=Kaggle&logoColor=white" alt="Kaggle Badge"/>
   </a>
@@ -70,7 +70,7 @@ I am a dedicated Engineering student passionate about machine learning, data ana
 
 ### 🔥 My Stats 
 
-|![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=sivasuthan9&theme=buefy&show_icons=true&card_width=400&hide_title=true)|[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=sivasuthan9&layout=compact&theme=vision-friendly-light&card_width=400&hide_title=true)](https://github.com/anuraghazra/github-readme-stats)|
+![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=sivasuthan9&theme=buefy&show_icons=true&include_all_commits=true&hide_rank=true) |[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=sivasuthan9&layout=compact&theme=vision-friendly-light&card_width=400&hide_title=true)](https://github.com/anuraghazra/github-readme-stats)|
 |------|----|
 
 </div>
