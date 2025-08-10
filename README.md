@@ -23,13 +23,11 @@
   </a>
 </div>
 
----
 
 ## 🛠 Tools I Use  
 
 [![My Skills](https://skillicons.dev/icons?i=js,ts,python,java,html,css,react,angular,next,express,spring,fastapi,pytorch,tensorflow,aws,azure,gcp,docker,kubernetes,terraform,mysql,postgres,mongodb,vscode,idea,github&perline=13&theme=light)](https://skillicons.dev)  
 
----
 
 ## 📊 GitHub Journey  
 
