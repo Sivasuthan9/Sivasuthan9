@@ -23,25 +23,3 @@
   </a>
 </div>
 
-
-## 🛠 Tools I Use  
-
-[![My Skills](https://skillicons.dev/icons?i=js,ts,python,java,html,css,react,angular,next,express,spring,fastapi,pytorch,tensorflow,aws,azure,gcp,docker,kubernetes,terraform,mysql,postgres,mongodb,vscode,idea,github&perline=13&theme=light)](https://skillicons.dev)  
-
-
-## 📊 GitHub Journey  
-
-<div align="center">
-  <table>
-    <tr>
-      <td>
-        <img src="https://github-readme-stats.vercel.app/api?username=sivasuthan9&theme=buefy&show_icons=true&include_all_commits=true&hide_rank=true&hide=contribs" alt="GitHub Stats" />
-      </td>
-      <td>
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sivasuthan9&layout=compact&theme=vision-friendly-light&card_width=400&hide_title=true" alt="Top Languages" />
-      </td>
-    </tr>
-  </table>
-</div>
-
-</div>
