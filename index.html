@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#3a0a0a" />
+  <meta name="description" content="Maheevan & Brannavi — A Tamil Hindu Wedding Invitation, 18th June 2026." />
+  <title>Maheevan &amp; Brannavi — A Tamil Wedding Invitation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Great+Vibes&family=Tangerine:wght@400;700&family=Cormorant:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E%F0%9F%AA%94%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- ============= LOADER ============= -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__mandala">
+      <svg viewBox="0 0 200 200" width="180" height="180" aria-hidden="true">
+        <defs>
+          <radialGradient id="lg1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#f5d27a"/>
+            <stop offset="100%" stop-color="#8b0e0e" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="100" cy="100" r="90" fill="url(#lg1)" opacity="0.5"/>
+        <g fill="none" stroke="#f0c264" stroke-width="1.2">
+          <circle cx="100" cy="100" r="80"/>
+          <circle cx="100" cy="100" r="60"/>
+          <circle cx="100" cy="100" r="40"/>
+          <circle cx="100" cy="100" r="20"/>
+        </g>
+        <g stroke="#f0c264" stroke-width="1" fill="none">
+          <path d="M100 20 L100 180 M20 100 L180 100 M40 40 L160 160 M40 160 L160 40"/>
+        </g>
+        <g fill="#f0c264">
+          <circle cx="100" cy="100" r="4"/>
+        </g>
+      </svg>
+    </div>
+    <p class="loader__text">Maheevan &amp; Brannavi</p>
+    <p class="loader__sub">Preparing your invitation…</p>
+  </div>
+
+  <audio id="bellSfx" preload="auto">
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_a8e603753c.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Floating petals canvas -->
+  <canvas class="petals" id="petals" aria-hidden="true"></canvas>
+
+  <!-- ============= HERO ============= -->
+  <section class="hero" id="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__glow"></div>
+      <div class="hero__mandala hero__mandala--left">
+        <svg viewBox="0 0 300 300" aria-hidden="true"><use href="#mandala-1"></use></svg>
+      </div>
+      <div class="hero__mandala hero__mandala--right">
+        <svg viewBox="0 0 300 300" aria-hidden="true"><use href="#mandala-1"></use></svg>
+      </div>
+
+      <!-- temple silhouette -->
+      <svg class="hero__temple" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="tempGrad" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#3a0a0a" stop-opacity="0"/>
+            <stop offset="60%" stop-color="#2a0606" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#1a0303" stop-opacity="0.95"/>
+          </linearGradient>
+        </defs>
+        <path fill="url(#tempGrad)" d="M0,300 L0,220 L80,220 L100,180 L120,220 L180,220 L180,160 L220,140 L260,160 L260,220 L320,220 L320,180 L360,150 L400,180 L400,220 L480,220 L490,170 L520,120 L540,80 L560,120 L590,170 L600,220 L680,220 L680,180 L720,150 L760,180 L760,220 L840,220 L840,160 L880,140 L920,160 L920,220 L980,220 L1000,180 L1020,220 L1100,220 L1120,200 L1200,200 L1200,300 Z"/>
+        <g opacity="0.85">
+          <path fill="#1a0303" d="M520,120 L540,60 L560,120 Z"/>
+          <circle cx="540" cy="55" r="3" fill="#f0c264"/>
+        </g>
+      </svg>
+
+      <!-- floating diyas -->
+      <div class="diya diya--1"><span class="flame"></span></div>
+      <div class="diya diya--2"><span class="flame"></span></div>
+      <div class="diya diya--3"><span class="flame"></span></div>
+    </div>
+
+    <div class="hero__content" id="heroContent">
+      <div class="hero__ornament hero__ornament--top reveal" data-delay="0">
+        <svg viewBox="0 0 400 40" aria-hidden="true">
+          <use href="#divider-1"></use>
+        </svg>
+      </div>
+
+      <h1 class="hero__title reveal" data-delay="200">
+        <span class="hero__title-line">Two Hearts.</span>
+        <span class="hero__title-line">One Forever.</span>
+      </h1>
+
+      <p class="hero__subtitle reveal" data-delay="500">Join us in celebrating the wedding of</p>
+
+      <h2 class="hero__names reveal" data-delay="700">
+        <span class="hero__name">Maheevan</span>
+        <span class="hero__amp">
+          <svg viewBox="0 0 60 40" aria-hidden="true">
+            <path d="M5 20 Q20 5 30 20 Q40 35 55 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <circle cx="30" cy="20" r="2.5" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="hero__name">Brannavi</span>
+      </h2>
+
+      <p class="hero__date reveal" data-delay="900">18 . 06 . 2026  •  Thursday</p>
+
+      <div class="hero__ornament hero__ornament--bot reveal" data-delay="1000">
+        <svg viewBox="0 0 400 40" aria-hidden="true">
+          <use href="#divider-1"></use>
+        </svg>
+      </div>
+
+      <button class="btn-open reveal" id="btnOpen" data-delay="1200">
+        <span class="btn-open__shine"></span>
+        <span class="btn-open__text">Open Invitation</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true">
+      <span></span>
+      <p>scroll</p>
+    </div>
+  </section>
+
+  <!-- ============= COUPLE SECTION ============= -->
+  <section class="section couple-section" id="couple">
+    <div class="section-head reveal">
+      <p class="eyebrow">~ The Beloved ~</p>
+      <h2 class="section-title">Two Souls, One Story</h2>
+      <div class="divider"><svg viewBox="0 0 400 40" aria-hidden="true"><use href="#divider-1"></use></svg></div>
+    </div>
+
+    <div class="couple-grid">
+      <article class="couple-card reveal" data-side="groom">
+        <div class="couple-card__corner couple-card__corner--tl"></div>
+        <div class="couple-card__corner couple-card__corner--tr"></div>
+        <div class="couple-card__corner couple-card__corner--bl"></div>
+        <div class="couple-card__corner couple-card__corner--br"></div>
+
+        <div class="couple-card__photo-wrap">
+          <div class="couple-card__photo-ring"></div>
+          <img class="couple-card__photo" src="Groom.jpeg" alt="Maheevan, the groom" loading="lazy" />
+          <span class="couple-card__floral couple-card__floral--tl"></span>
+          <span class="couple-card__floral couple-card__floral--br"></span>
+        </div>
+        <p class="couple-card__role">The Groom</p>
+        <h3 class="couple-card__name">Maheevan</h3>
+        <div class="couple-card__mini-divider"></div>
+        <p class="couple-card__parents">Son of<br/><strong>Mr. &amp; Mrs. Kirupakaran Jeyatharani</strong></p>
+      </article>
+
+      <div class="couple-connector reveal" aria-hidden="true">
+        <svg viewBox="0 0 80 200">
+          <defs>
+            <linearGradient id="conn" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#f5d27a" stop-opacity="0"/>
+              <stop offset="50%" stop-color="#f5d27a"/>
+              <stop offset="100%" stop-color="#f5d27a" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <line x1="40" y1="0" x2="40" y2="200" stroke="url(#conn)" stroke-width="1.2"/>
+          <g transform="translate(40 100)">
+            <path d="M0 -14 Q-10 -8 -10 0 Q-10 8 0 14 Q10 8 10 0 Q10 -8 0 -14 Z" fill="#8b0e0e"/>
+            <path d="M0 -10 Q-7 -5 -7 0 Q-7 5 0 10 Q7 5 7 0 Q7 -5 0 -10 Z" fill="#f5d27a"/>
+          </g>
+        </svg>
+      </div>
+
+      <article class="couple-card reveal" data-side="bride">
+        <div class="couple-card__corner couple-card__corner--tl"></div>
+        <div class="couple-card__corner couple-card__corner--tr"></div>
+        <div class="couple-card__corner couple-card__corner--bl"></div>
+        <div class="couple-card__corner couple-card__corner--br"></div>
+
+        <div class="couple-card__photo-wrap">
+          <div class="couple-card__photo-ring"></div>
+          <img class="couple-card__photo" src="Bride.jpeg" alt="Brannavi, the bride" loading="lazy" />
+          <span class="couple-card__floral couple-card__floral--tl"></span>
+          <span class="couple-card__floral couple-card__floral--br"></span>
+        </div>
+        <p class="couple-card__role">The Bride</p>
+        <h3 class="couple-card__name">Brannavi</h3>
+        <div class="couple-card__mini-divider"></div>
+        <p class="couple-card__parents">Daughter of<br/><strong>Mr. &amp; Mrs. Sukumar Bavani</strong></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============= WEDDING DETAILS ============= -->
+  <section class="section details-section" id="details">
+    <div class="section-head reveal">
+      <p class="eyebrow">~ Save The Date ~</p>
+      <h2 class="section-title">Mark the day, celebrate the love</h2>
+      <div class="divider"><svg viewBox="0 0 400 40" aria-hidden="true"><use href="#divider-1"></use></svg></div>
+    </div>
+
+    <!-- countdown -->
+    <div class="countdown reveal" id="countdown" aria-label="Countdown to the wedding">
+      <div class="cd-unit"><span class="cd-num" data-unit="days">00</span><span class="cd-label">Days</span></div>
+      <div class="cd-unit"><span class="cd-num" data-unit="hours">00</span><span class="cd-label">Hours</span></div>
+      <div class="cd-unit"><span class="cd-num" data-unit="minutes">00</span><span class="cd-label">Minutes</span></div>
+      <div class="cd-unit"><span class="cd-num" data-unit="seconds">00</span><span class="cd-label">Seconds</span></div>
+    </div>
+
+    <!-- invitation card -->
+    <div class="invite-card reveal">
+      <div class="invite-card__inner">
+        <div class="invite-card__crest">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="45" fill="rgba(255,249,236,0.95)" stroke="url(#goldBorder)" stroke-width="2"/>
+            <circle cx="50" cy="50" r="37" fill="none" stroke="#c79029" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.75"/>
+            <text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="'Cinzel', serif" font-weight="700" font-size="22" letter-spacing="2" fill="#5b0606">M&amp;B</text>
+          </svg>
+        </div>
+
+        <p class="invite-card__date">18<sup>th</sup> June 2026  •  Thursday</p>
+        <div class="divider divider--inline"><svg viewBox="0 0 400 40"><use href="#divider-1"></use></svg></div>
+
+        <div class="event-grid">
+          <div class="event">
+            <div class="event__icon">
+              <svg viewBox="0 0 60 60" aria-hidden="true">
+                <path d="M30 10 L40 22 L50 22 L50 50 L10 50 L10 22 L20 22 Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="26" y="34" width="8" height="16" fill="currentColor" opacity="0.4"/>
+                <circle cx="30" cy="6" r="3" fill="currentColor"/>
+              </svg>
+            </div>
+            <p class="event__label">Wedding Ceremony</p>
+            <h3 class="event__title">Selva Sannithi Murugan Temple</h3>
+            <p class="event__time"><span class="time-dot"></span>7:23 AM</p>
+            <a class="event__map" href="https://share.google/51GuewbOO3AhH7tgi" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-7.5-7-13a7 7 0 0 1 14 0c0 5.5-7 13-7 13z"/><circle cx="12" cy="8" r="2.5"/></svg>
+              View on Map
+            </a>
+          </div>
+
+          <div class="event-divider" aria-hidden="true">
+            <div class="event-divider__line"></div>
+            <span class="event-divider__bell">
+              <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
+                <path d="M20 6 Q26 6 26 12 Q26 14 28 18 Q30 24 30 28 L10 28 Q10 24 12 18 Q14 14 14 12 Q14 6 20 6Z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+                <circle cx="20" cy="4" r="2" fill="currentColor"/>
+                <circle cx="20" cy="32" r="2.4" fill="currentColor"/>
+              </svg>
+            </span>
+            <div class="event-divider__line"></div>
+          </div>
+
+          <div class="event">
+            <div class="event__icon">
+              <svg viewBox="0 0 60 60" aria-hidden="true">
+                <circle cx="30" cy="30" r="22" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M30 14 V30 L40 36" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <p class="event__label">Followed by Registration &amp; Lunch</p>
+            <h3 class="event__title">Kubera Mahal</h3>
+            <p class="event__sub">Suthumalai, Manipay</p>
+            <p class="event__time"><span class="time-dot"></span>10:30 AM</p>
+            <a class="event__map" href="https://share.google/z71tJCKgB9DsWb1VE" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-7.5-7-13a7 7 0 0 1 14 0c0 5.5-7 13-7 13z"/><circle cx="12" cy="8" r="2.5"/></svg>
+              View on Map
+            </a>
+          </div>
+        </div>
+
+        <div class="divider divider--inline"><svg viewBox="0 0 400 40"><use href="#divider-1"></use></svg></div>
+        <p class="invite-card__bless">— With the blessings of our family —</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============= LOVE STORY ============= -->
+  <section class="section story-section" id="story">
+    <div class="section-head reveal">
+      <p class="eyebrow">~ Our Journey ~</p>
+      <h2 class="section-title">A Love Written in the Stars</h2>
+      <div class="divider"><svg viewBox="0 0 400 40"><use href="#divider-1"></use></svg></div>
+    </div>
+
+    <ol class="timeline">
+      <li class="timeline__item reveal">
+        <span class="timeline__dot"></span>
+        <div class="timeline__card">
+          <p class="timeline__date">The Beginning</p>
+          <h3 class="timeline__title">First Meeting</h3>
+          <p class="timeline__text">Two paths crossed, two souls smiled — and time quietly paused. What began as a glance became the dearest chapter of our lives.</p>
+        </div>
+      </li>
+      <li class="timeline__item reveal">
+        <span class="timeline__dot"></span>
+        <div class="timeline__card">
+          <p class="timeline__date">A Promise Made</p>
+          <h3 class="timeline__title">The Engagement</h3>
+          <p class="timeline__text">In the warmth of our families, with prayers and golden vows, we promised forever — sealed by tradition, witnessed by love.</p>
+        </div>
+      </li>
+      <li class="timeline__item reveal">
+        <span class="timeline__dot"></span>
+        <div class="timeline__card">
+          <p class="timeline__date">18 . 06 . 2026</p>
+          <h3 class="timeline__title">The Wedding Day</h3>
+          <p class="timeline__text">Beneath sacred fires and the watchful gaze of Lord Murugan, two lives become one — bound by mantras, garlands, and the love of generations.</p>
+        </div>
+      </li>
+      <li class="timeline__item reveal">
+        <span class="timeline__dot timeline__dot--final"></span>
+        <div class="timeline__card timeline__card--final">
+          <p class="timeline__date">Always &amp; After</p>
+          <h3 class="timeline__title">Forever Begins</h3>
+          <p class="timeline__text">A journey of dreams, laughter, and quiet evenings — written together, one beautiful day at a time.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============= RSVP ============= -->
+  <section class="section rsvp-section" id="rsvp">
+    <div class="section-head reveal">
+      <p class="eyebrow">~ With Love ~</p>
+      <h2 class="section-title">Send Us Your Blessings</h2>
+      <div class="divider"><svg viewBox="0 0 400 40"><use href="#divider-1"></use></svg></div>
+      <p class="section-sub">Your presence — in person or in spirit — is the greatest blessing of all.</p>
+    </div>
+
+    <form class="rsvp-form reveal" id="rsvpForm" novalidate>
+      <div class="field">
+        <input type="text" id="rsvp-name" name="name" placeholder=" " required autocomplete="name">
+        <label for="rsvp-name">Your Full Name</label>
+        <span class="field__line"></span>
+      </div>
+
+      <div class="form-row">
+        <div class="form-col form-col--attend">
+          <p class="form-legend">Will you attend?</p>
+          <div class="radio-group">
+            <label class="radio">
+              <input type="radio" name="attend" value="yes" required>
+              <span class="radio__custom"></span>
+              <span class="radio__label">Joyfully Yes</span>
+            </label>
+            <label class="radio">
+              <input type="radio" name="attend" value="no">
+              <span class="radio__custom"></span>
+              <span class="radio__label">Regretfully No</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-col form-col--guests">
+          <label class="form-legend" for="rsvp-guests">No. of Guests</label>
+          <input class="form-input" type="number" id="rsvp-guests" name="guests" min="0" max="20" value="1">
+        </div>
+      </div>
+
+      <div class="field">
+        <textarea id="rsvp-message" name="message" rows="4" placeholder=" "></textarea>
+        <label for="rsvp-message">Your Blessings &amp; Wishes</label>
+        <span class="field__line"></span>
+      </div>
+
+      <button type="submit" class="btn-submit">
+        <span class="btn-submit__shine"></span>
+        <span class="btn-submit__text">Send Your Blessings</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9 22 2z"/></svg>
+      </button>
+
+      <p class="rsvp-note">We kindly request your response by 1<sup>st</sup> June 2026.</p>
+    </form>
+
+    <!-- thank you overlay -->
+    <div class="thanks" id="thanks" aria-hidden="true">
+      <div class="thanks__inner">
+        <div class="thanks__petals"></div>
+        <h3 class="thanks__title">Thank You</h3>
+        <p class="thanks__text">Your blessings have reached us.<br/>May our families' love embrace you always.</p>
+        <div class="divider"><svg viewBox="0 0 400 40"><use href="#divider-1"></use></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= FOOTER ============= -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__lamp">
+        <svg viewBox="0 0 100 140" aria-hidden="true">
+          <defs>
+            <radialGradient id="lampGlow2" cx="50%" cy="40%" r="50%">
+              <stop offset="0%" stop-color="#ffd47a" stop-opacity="0.95"/>
+              <stop offset="100%" stop-color="#ffd47a" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="50" cy="40" r="38" fill="url(#lampGlow2)" class="footer-lamp-glow"/>
+          <path d="M50 40 Q56 26 62 40 Q56 46 50 46 Q44 46 38 40 Q44 26 50 40" fill="#ffd47a"/>
+          <ellipse class="flame-svg" cx="50" cy="22" rx="6" ry="14" fill="#ffb347"/>
+          <ellipse class="flame-svg" cx="50" cy="18" rx="3" ry="8" fill="#fff4c7"/>
+          <ellipse cx="50" cy="60" rx="42" ry="12" fill="#c79029"/>
+          <path d="M8 60 Q50 38 92 60 Q88 78 50 82 Q12 78 8 60Z" fill="#8b0e0e"/>
+          <rect x="38" y="72" width="24" height="10" fill="#c79029"/>
+          <rect x="30" y="82" width="40" height="6" fill="#c79029"/>
+        </svg>
+      </div>
+
+      <p class="footer__quote">
+        With the blessings of our families,<br/>
+        we invite you to celebrate our new beginning.
+      </p>
+
+      <h2 class="footer__names">
+        <span class="footer__name">Maheevan</span>
+        <span class="footer__heart" aria-hidden="true">
+          <svg viewBox="0 0 40 36" width="34" height="32">
+            <path d="M20 32 L4 18 Q-2 10 6 4 Q14 -2 20 8 Q26 -2 34 4 Q42 10 36 18 Z" fill="#8b0e0e" stroke="#f5d27a" stroke-width="1"/>
+          </svg>
+        </span>
+        <span class="footer__name">Brannavi</span>
+      </h2>
+
+      <div class="footer__infinity" aria-hidden="true">
+        <svg viewBox="0 0 120 60">
+          <path class="inf-path" d="M30 30 C30 10, 55 10, 60 30 C65 50, 90 50, 90 30 C90 10, 65 10, 60 30 C55 50, 30 50, 30 30 Z"
+                fill="none" stroke="url(#goldBorder)" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <p class="footer__date">18<sup>th</sup> June 2026 — Selva Sannithi Murugan Temple</p>
+      <p class="footer__credit">Made with love for our family &amp; friends</p>
+    </div>
+
+    <!-- footer floral edges -->
+    <div class="footer__floral footer__floral--l" aria-hidden="true"></div>
+    <div class="footer__floral footer__floral--r" aria-hidden="true"></div>
+  </footer>
+
+  <!-- ============= REUSABLE SVG DEFS ============= -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- ornate divider -->
+      <symbol id="divider-1" viewBox="0 0 400 40">
+        <g fill="none" stroke="currentColor" stroke-width="1">
+          <line x1="20" y1="20" x2="160" y2="20"/>
+          <line x1="240" y1="20" x2="380" y2="20"/>
+          <path d="M160 20 Q170 10 180 20 Q190 30 200 20 Q210 10 220 20 Q230 30 240 20"/>
+        </g>
+        <g fill="currentColor">
+          <circle cx="20" cy="20" r="1.6"/>
+          <circle cx="380" cy="20" r="1.6"/>
+          <circle cx="200" cy="20" r="2.2"/>
+        </g>
+        <g fill="none" stroke="currentColor" stroke-width="0.7">
+          <path d="M194 14 Q200 8 206 14 Q200 16 194 14"/>
+          <path d="M194 26 Q200 32 206 26 Q200 24 194 26"/>
+        </g>
+      </symbol>
+
+      <!-- mandala -->
+      <symbol id="mandala-1" viewBox="0 0 300 300">
+        <g fill="none" stroke="#f5d27a" stroke-width="0.8" opacity="0.6">
+          <circle cx="150" cy="150" r="140"/>
+          <circle cx="150" cy="150" r="115"/>
+          <circle cx="150" cy="150" r="90"/>
+          <circle cx="150" cy="150" r="65"/>
+          <circle cx="150" cy="150" r="40"/>
+          <circle cx="150" cy="150" r="15"/>
+        </g>
+        <g stroke="#f5d27a" stroke-width="0.7" fill="none" opacity="0.55">
+          <g transform="translate(150 150)">
+            <g id="petal-group">
+              <path d="M0 -120 Q-10 -85 0 -50 Q10 -85 0 -120"/>
+            </g>
+            <use href="#petal-group" transform="rotate(30)"/>
+            <use href="#petal-group" transform="rotate(60)"/>
+            <use href="#petal-group" transform="rotate(90)"/>
+            <use href="#petal-group" transform="rotate(120)"/>
+            <use href="#petal-group" transform="rotate(150)"/>
+            <use href="#petal-group" transform="rotate(180)"/>
+            <use href="#petal-group" transform="rotate(210)"/>
+            <use href="#petal-group" transform="rotate(240)"/>
+            <use href="#petal-group" transform="rotate(270)"/>
+            <use href="#petal-group" transform="rotate(300)"/>
+            <use href="#petal-group" transform="rotate(330)"/>
+          </g>
+        </g>
+        <circle cx="150" cy="150" r="4" fill="#f5d27a" opacity="0.8"/>
+      </symbol>
+
+      <!-- the gold border gradient reused -->
+      <linearGradient id="goldBorder" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0%" stop-color="#f5d27a"/>
+        <stop offset="50%" stop-color="#fff4c7"/>
+        <stop offset="100%" stop-color="#c79029"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
