@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <meta name="theme-color" content="#3a0a0a" />
-  <meta name="description" content="Maheevan & Brannavi — A Tamil Hindu Wedding Invitation, 18th June 2026." />
+  <meta name="description" content="Maheevan & Brannavi — A Tamil Hindu Wedding Invitation. Wedding 18th June 2026 • Reception 19th June 2026." />
   <title>Maheevan &amp; Brannavi</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -278,6 +278,39 @@
       </div>
     </div>
 
+    <!-- reception invitation card -->
+    <div class="invite-card invite-card--reception reveal">
+      <div class="invite-card__inner">
+        <p class="invite-card__eyebrow">~ The Celebration Continues ~</p>
+
+        <p class="invite-card__date">19<sup>th</sup> June 2026  •  Friday</p>
+        <div class="divider divider--inline"><svg viewBox="0 0 400 40"><use href="#divider-1"></use></svg></div>
+
+        <div class="event-grid event-grid--single">
+          <div class="event">
+            <div class="event__icon">
+              <svg viewBox="0 0 60 60" aria-hidden="true">
+                <path d="M30 6 L34 24 L52 28 L34 32 L30 50 L26 32 L8 28 L26 24 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <circle cx="30" cy="28" r="2.5" fill="currentColor" opacity="0.45"/>
+                <circle cx="50" cy="12" r="1.6" fill="currentColor"/>
+                <circle cx="10" cy="48" r="1.6" fill="currentColor"/>
+              </svg>
+            </div>
+            <p class="event__label">Wedding Reception</p>
+            <h3 class="event__title">Chankanai</h3>
+            <p class="event__time"><span class="time-dot"></span>5:00 PM onwards</p>
+            <a class="event__map" href="https://www.google.com/maps/place/9%C2%B044'42.0%22N+79%C2%B058'15.9%22E/@9.7449939,79.968506,17z/data=!3m1!4b1!4m4!3m3!8m2!3d9.7449939!4d79.9710809?hl=en&entry=ttu&g_ep=EgoyMDI2MDUxMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-7.5-7-13a7 7 0 0 1 14 0c0 5.5-7 13-7 13z"/><circle cx="12" cy="8" r="2.5"/></svg>
+              View on Map
+            </a>
+          </div>
+        </div>
+
+        <div class="divider divider--inline"><svg viewBox="0 0 400 40"><use href="#divider-1"></use></svg></div>
+        <p class="invite-card__bless">— An evening of music, laughter &amp; love —</p>
+      </div>
+    </div>
+
   </section>
 
   <!-- ============= LOVE STORY ============= -->
@@ -340,6 +373,7 @@
         <span class="field__line"></span>
       </div>
 
+      <p class="form-section-label">Wedding Ceremony &mdash; 18<sup>th</sup> June 2026</p>
       <div class="form-row">
         <div class="form-col form-col--attend">
           <p class="form-legend">Will you attend?</p>
@@ -360,6 +394,30 @@
         <div class="form-col form-col--guests">
           <label class="form-legend" for="rsvp-guests">No. of Guests</label>
           <input class="form-input" type="number" id="rsvp-guests" name="guests" min="0" max="20" value="1">
+        </div>
+      </div>
+
+      <p class="form-section-label">Reception &mdash; 19<sup>th</sup> June 2026</p>
+      <div class="form-row">
+        <div class="form-col form-col--attend">
+          <p class="form-legend">Will you attend the Reception?</p>
+          <div class="radio-group">
+            <label class="radio">
+              <input type="radio" name="reception" value="yes" required>
+              <span class="radio__custom"></span>
+              <span class="radio__label">Joyfully Yes</span>
+            </label>
+            <label class="radio">
+              <input type="radio" name="reception" value="no">
+              <span class="radio__custom"></span>
+              <span class="radio__label">Regretfully No</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-col form-col--guests">
+          <label class="form-legend" for="rsvp-reception-guests">No. of Guests</label>
+          <input class="form-input" type="number" id="rsvp-reception-guests" name="receptionGuests" min="0" max="20" value="1">
         </div>
       </div>
 
@@ -434,6 +492,7 @@
       </div>
 
       <p class="footer__date">18<sup>th</sup> June 2026 — Selva Sannithi Murugan Temple</p>
+      <p class="footer__date">19<sup>th</sup> June 2026 — Reception at Chankanai</p>
       <p class="footer__credit">Made with love for our family &amp; friends</p>
     </div>
 

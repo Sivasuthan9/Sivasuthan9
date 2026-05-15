@@ -224,12 +224,17 @@
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
+    const receptionAttend = form.elements['reception'].value;
     const data = {
-      name:    form.elements['name'].value.trim(),
-      attend:  form.elements['attend'].value,
-      guests:  parseInt(form.elements['guests'].value || '0', 10),
-      message: form.elements['message'].value.trim(),
-      ts:      new Date().toISOString()
+      name:             form.elements['name'].value.trim(),
+      attend:           form.elements['attend'].value,
+      guests:           parseInt(form.elements['guests'].value || '0', 10),
+      reception:        receptionAttend,
+      receptionGuests:  receptionAttend === 'yes'
+        ? parseInt(form.elements['receptionGuests'].value || '0', 10)
+        : 0,
+      message:          form.elements['message'].value.trim(),
+      ts:               new Date().toISOString()
     };
 
     if (!data.name) {
