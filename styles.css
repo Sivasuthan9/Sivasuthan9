@@ -795,9 +795,12 @@ a { color: inherit; text-decoration: none; }
 @keyframes blink { 50% { opacity: 0.3; } }
 
 .event__map {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  width: fit-content;
+  margin: 14px auto 0;
   padding: 11px 22px;
   border-radius: 30px;
   font-family: var(--f-elegant);
@@ -1027,9 +1030,6 @@ a { color: inherit; text-decoration: none; }
   gap: 14px;
   font-family: var(--f-display);
   font-weight: 600;
-  font-size: clamp(0.72rem, 1.6vw, 0.82rem);
-  letter-spacing: 3px;
-  text-transform: uppercase;
   color: var(--maroon-deep);
   text-align: center;
   margin: 4px 0 22px;
@@ -1042,7 +1042,27 @@ a { color: inherit; text-decoration: none; }
   min-width: 0;
   background: linear-gradient(90deg, transparent, var(--gold-deep), transparent);
 }
-.form-section-label sup { font-size: 0.7em; top: -0.4em; }
+.form-section-label__title,
+.form-section-label__date {
+  display: inline-block;
+  font-size: clamp(0.74rem, 1.6vw, 0.84rem);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.form-section-label__title { font-weight: 700; }
+.form-section-label__date {
+  font-weight: 500;
+  color: var(--maroon);
+  margin-left: 10px;
+  position: relative;
+}
+.form-section-label__date::before {
+  content: '—';
+  margin-right: 10px;
+  color: var(--gold-deep);
+  font-weight: 400;
+}
+.form-section-label sup { font-size: 0.65em; top: -0.4em; }
 .form-row + .form-section-label { margin-top: 18px; }
 
 .form-input {
@@ -1422,50 +1442,45 @@ a { color: inherit; text-decoration: none; }
   .hero { padding-top: 80px; }
 
   /* ---- RSVP form ---- */
-  .form-row { grid-template-columns: 1fr; gap: 22px; }
+  .form-row { grid-template-columns: 1fr; gap: 24px; }
+  .form-col--guests .form-input { max-width: 160px; }
+
+  /* Stack the section label title + date on two lines so it never crowds the line */
   .form-section-label {
-    font-size: 0.66rem;
-    letter-spacing: 1.5px;
-    gap: 10px;
-    margin: 2px 0 18px;
+    grid-template-columns: minmax(14px, 1fr) auto minmax(14px, 1fr);
+    gap: 12px;
+    margin: 6px 0 20px;
   }
-  .form-row + .form-section-label { margin-top: 12px; }
-  .form-col--guests .form-input { max-width: 140px; }
-  .form-legend { font-size: 0.85rem; letter-spacing: 2.5px; margin-bottom: 12px; }
+  .form-row + .form-section-label { margin-top: 14px; }
+  .form-section-label__title,
+  .form-section-label__date {
+    display: block;
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+  }
+  .form-section-label__date {
+    margin-left: 0;
+    margin-top: 4px;
+    font-size: 0.72rem;
+  }
+  .form-section-label__date::before { display: none; }
 
-  /* ---- invitation / reception cards: compact for phone ---- */
-  .invite-card + .invite-card { margin-top: 28px; }
-  .invite-card__inner { padding: 32px 22px; }
+  /* ---- invitation / reception cards: slight compaction for phone ---- */
+  .invite-card + .invite-card { margin-top: 32px; }
+  .invite-card__inner { padding: 36px 22px; }
   .invite-card__inner::before,
-  .invite-card__inner::after { width: 48px; height: 48px; top: 10px; left: 10px; }
-  .invite-card__inner::after { top: auto; left: auto; bottom: 10px; right: 10px; }
-  .invite-card__crest { width: 60px; margin: 0 auto 16px; }
-  .invite-card__date { font-size: 1.05rem; letter-spacing: 3px; }
-  .invite-card__eyebrow { font-size: 0.78rem; letter-spacing: 2.5px; margin-bottom: 10px; }
-  .invite-card__bless { font-size: 0.78rem; letter-spacing: 2px; line-height: 1.5; }
-  .divider--inline { margin: 14px auto; }
+  .invite-card__inner::after { width: 56px; height: 56px; top: 12px; left: 12px; }
+  .invite-card__inner::after { top: auto; left: auto; bottom: 12px; right: 12px; }
+  .invite-card__date { letter-spacing: 3px; }
+  .invite-card__eyebrow { letter-spacing: 2.5px; }
+  .invite-card__bless { letter-spacing: 2px; line-height: 1.55; }
+  .divider--inline { margin: 16px auto; }
 
-  .event-grid { margin: 16px 0; gap: 18px; }
-  .event-grid--single { margin: 14px auto; }
-  .event { padding: 8px 4px; }
-  .event__icon { width: 44px; height: 44px; margin: 0 auto 10px; }
-  .event__icon svg { width: 28px; height: 28px; }
-  .event__label { font-size: 0.78rem; letter-spacing: 2px; margin-bottom: 6px; }
-  .event__title { font-size: 1.15rem; letter-spacing: 1px; }
-  .event__sub { font-size: 1rem; margin-bottom: 8px; }
-  .event__time { font-size: 1.05rem; margin: 8px 0 14px; letter-spacing: 1px; }
-  .event__map { padding: 9px 18px; font-size: 0.82rem; letter-spacing: 1.8px; }
-
-  /* ---- footer: fit the last page on phone ---- */
-  .footer { padding: 50px 18px 28px; margin-top: 28px; }
-  .footer__lamp { width: 68px; margin: 0 auto 18px; }
-  .footer__quote { font-size: 0.92rem; line-height: 1.65; letter-spacing: 0.4px; margin-bottom: 20px; }
-  .footer__names { font-size: clamp(2.3rem, 11vw, 3rem); gap: 4px; margin-bottom: 18px; letter-spacing: 1px; }
-  .footer__heart svg { width: 26px; height: 24px; }
-  .footer__infinity { width: 84px; margin: 4px auto 18px; }
-  .footer__date { font-size: 0.7rem; letter-spacing: 2.5px; margin-bottom: 6px; }
-  .footer__credit { font-size: 0.68rem; letter-spacing: 1.5px; }
-  .footer__floral { width: 120px; height: 120px; opacity: 0.12; }
+  .event-grid--single { margin: 18px auto; }
+  .event__icon { width: 48px; height: 48px; margin: 0 auto 10px; }
+  .event__icon svg { width: 30px; height: 30px; }
+  .event__time { margin: 10px 0 4px; }
+  .event__map { margin-top: 12px; padding: 10px 20px; font-size: 0.85rem; letter-spacing: 2px; }
 
   .countdown { gap: 8px; }
   .cd-unit { padding: 14px 4px 10px; }
