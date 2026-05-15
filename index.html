@@ -216,9 +216,40 @@
       <div class="invite-card__inner">
         <div class="invite-card__crest">
           <svg viewBox="0 0 100 100" aria-hidden="true">
-            <circle cx="50" cy="50" r="45" fill="rgba(255,249,236,0.95)" stroke="url(#goldBorder)" stroke-width="2"/>
-            <circle cx="50" cy="50" r="37" fill="none" stroke="#c79029" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.75"/>
-            <text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="'Cinzel', serif" font-weight="700" font-size="22" letter-spacing="2" fill="#5b0606">M&amp;B</text>
+            <defs>
+              <radialGradient id="crestBg" cx="50%" cy="38%" r="62%">
+                <stop offset="0%"   stop-color="#fff9ec"/>
+                <stop offset="55%"  stop-color="#fbf2dc"/>
+                <stop offset="100%" stop-color="#f0d99a"/>
+              </radialGradient>
+              <linearGradient id="crestText" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%"   stop-color="#a82323"/>
+                <stop offset="50%"  stop-color="#5b0606"/>
+                <stop offset="100%" stop-color="#8b0e0e"/>
+              </linearGradient>
+              <linearGradient id="crestSheen" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0%"   stop-color="#fff4c7" stop-opacity="0"/>
+                <stop offset="45%"  stop-color="#fff4c7" stop-opacity="0"/>
+                <stop offset="50%"  stop-color="#fff4c7" stop-opacity="0.85"/>
+                <stop offset="55%"  stop-color="#fff4c7" stop-opacity="0"/>
+                <stop offset="100%" stop-color="#fff4c7" stop-opacity="0"/>
+              </linearGradient>
+              <clipPath id="crestClip">
+                <circle cx="50" cy="50" r="44"/>
+              </clipPath>
+            </defs>
+            <circle cx="50" cy="50" r="45" fill="url(#crestBg)" stroke="url(#goldBorder)" stroke-width="2"/>
+            <circle class="crest-ring" cx="50" cy="50" r="37" fill="none" stroke="#c79029" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.8"/>
+            <text class="crest-text" x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="'Cinzel', serif" font-weight="700" font-size="22" letter-spacing="2" fill="url(#crestText)">M&amp;B</text>
+            <g clip-path="url(#crestClip)">
+              <rect class="crest-sheen" x="-100" y="0" width="60" height="100" fill="url(#crestSheen)"/>
+            </g>
+            <g class="crest-sparkles">
+              <circle class="crest-spark crest-spark--1" cx="22" cy="28" r="1.4" fill="#fff4c7"/>
+              <circle class="crest-spark crest-spark--2" cx="78" cy="34" r="1.2" fill="#fff4c7"/>
+              <circle class="crest-spark crest-spark--3" cx="76" cy="72" r="1" fill="#fff4c7"/>
+              <circle class="crest-spark crest-spark--4" cx="24" cy="74" r="1.2" fill="#fff4c7"/>
+            </g>
           </svg>
         </div>
 
@@ -484,18 +515,20 @@
         <span class="footer__name">Maheevan</span>
         <span class="footer__heart" aria-hidden="true">
           <svg viewBox="0 0 40 36" width="34" height="32">
-            <path d="M20 32 L4 18 Q-2 10 6 4 Q14 -2 20 8 Q26 -2 34 4 Q42 10 36 18 Z" fill="#8b0e0e" stroke="#f5d27a" stroke-width="1"/>
+            <defs>
+              <radialGradient id="heartShine" cx="35%" cy="30%" r="75%">
+                <stop offset="0%"   stop-color="#ffd9e0"/>
+                <stop offset="22%"  stop-color="#ff6b8a"/>
+                <stop offset="55%"  stop-color="#c92020"/>
+                <stop offset="100%" stop-color="#5b0606"/>
+              </radialGradient>
+            </defs>
+            <path d="M20 32 L4 18 Q-2 10 6 4 Q14 -2 20 8 Q26 -2 34 4 Q42 10 36 18 Z" fill="url(#heartShine)" stroke="#f5d27a" stroke-width="1"/>
+            <ellipse cx="13" cy="9" rx="3.2" ry="2" fill="rgba(255,255,255,0.55)" transform="rotate(-28 13 9)"/>
           </svg>
         </span>
         <span class="footer__name">Brannavi</span>
       </h2>
-
-      <div class="footer__infinity" aria-hidden="true">
-        <svg viewBox="0 0 120 60">
-          <path class="inf-path" d="M30 30 C30 10, 55 10, 60 30 C65 50, 90 50, 90 30 C90 10, 65 10, 60 30 C55 50, 30 50, 30 30 Z"
-                fill="none" stroke="url(#goldBorder)" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-      </div>
 
       <p class="footer__date">18<sup>th</sup> June 2026 — Selva Sannithi Murugan Temple</p>
       <p class="footer__date">19<sup>th</sup> June 2026 — Reception at Chankanai</p>

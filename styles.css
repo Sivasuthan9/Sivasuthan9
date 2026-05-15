@@ -683,9 +683,59 @@ a { color: inherit; text-decoration: none; }
 .invite-card__crest {
   width: 80px;
   margin: 0 auto 24px;
-  filter: drop-shadow(0 0 12px rgba(245, 210, 122, 0.5));
+  animation: crestGlow 3s ease-in-out infinite, crestPulse 2.6s ease-in-out infinite;
+  transform-origin: center;
+  will-change: filter, transform;
 }
-.invite-card__crest svg { width: 100%; height: auto; }
+.invite-card__crest svg { width: 100%; height: auto; overflow: visible; }
+
+@keyframes crestGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(245, 210, 122, 0.55))
+            drop-shadow(0 0 18px rgba(255, 200, 100, 0.30));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(245, 210, 122, 1))
+            drop-shadow(0 0 34px rgba(255, 200, 100, 0.6))
+            drop-shadow(0 0 50px rgba(255, 180, 80, 0.35));
+  }
+}
+@keyframes crestPulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.04); }
+}
+
+.crest-ring {
+  transform-origin: 50px 50px;
+  animation: spinSlow 22s linear infinite;
+}
+
+.crest-text {
+  animation: crestTextPulse 2.6s ease-in-out infinite;
+}
+@keyframes crestTextPulse {
+  0%, 100% { opacity: 0.92; }
+  50%      { opacity: 1; }
+}
+
+.crest-sheen {
+  animation: crestSheenSweep 3.8s ease-in-out infinite;
+}
+@keyframes crestSheenSweep {
+  0%        { transform: translateX(0); }
+  60%, 100% { transform: translateX(240px); }
+}
+
+.crest-sparkles circle { transform-origin: center; transform-box: fill-box; }
+.crest-spark { animation: crestSparkle 2.2s ease-in-out infinite; }
+.crest-spark--1 { animation-delay: 0s;   }
+.crest-spark--2 { animation-delay: 0.55s;}
+.crest-spark--3 { animation-delay: 1.1s; }
+.crest-spark--4 { animation-delay: 1.65s;}
+@keyframes crestSparkle {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  40%, 60% { opacity: 1; transform: scale(1.3); }
+}
 
 .invite-card__date {
   font-family: var(--f-display);
@@ -795,6 +845,7 @@ a { color: inherit; text-decoration: none; }
 @keyframes blink { 50% { opacity: 0.3; } }
 
 .event__map {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -812,6 +863,18 @@ a { color: inherit; text-decoration: none; }
   background: rgba(255, 249, 236, 0.75);
   transition: all 0.4s var(--ease-out);
   text-transform: uppercase;
+  overflow: hidden;
+}
+.event__map::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent 0%, rgba(245, 210, 122, 0.5) 45%, rgba(255, 244, 199, 0.7) 50%, rgba(245, 210, 122, 0.5) 55%, transparent 100%);
+  animation: shine 3.8s ease-in-out infinite;
+  pointer-events: none;
 }
 .event__map:hover {
   background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 100%);
@@ -1026,8 +1089,11 @@ a { color: inherit; text-decoration: none; }
 .form-section-label {
   display: grid;
   grid-template-columns: minmax(12px, 1fr) auto minmax(12px, 1fr);
+  grid-template-rows: auto auto;
   align-items: center;
-  gap: 14px;
+  justify-items: center;
+  column-gap: 14px;
+  row-gap: 6px;
   font-family: var(--f-display);
   font-weight: 600;
   color: var(--maroon-deep);
@@ -1039,28 +1105,31 @@ a { color: inherit; text-decoration: none; }
 .form-section-label::after {
   content: '';
   height: 1px;
+  width: 100%;
   min-width: 0;
   background: linear-gradient(90deg, transparent, var(--gold-deep), transparent);
+  grid-row: 1 / span 2;
+  align-self: center;
 }
+.form-section-label::before { grid-column: 1; }
+.form-section-label::after  { grid-column: 3; }
 .form-section-label__title,
 .form-section-label__date {
-  display: inline-block;
-  font-size: clamp(0.74rem, 1.6vw, 0.84rem);
-  letter-spacing: 3px;
+  grid-column: 2;
   text-transform: uppercase;
 }
-.form-section-label__title { font-weight: 700; }
+.form-section-label__title {
+  grid-row: 1;
+  font-size: clamp(0.78rem, 1.7vw, 0.9rem);
+  letter-spacing: 3px;
+  font-weight: 700;
+}
 .form-section-label__date {
+  grid-row: 2;
+  font-size: clamp(0.7rem, 1.45vw, 0.8rem);
+  letter-spacing: 2.5px;
   font-weight: 500;
   color: var(--maroon);
-  margin-left: 10px;
-  position: relative;
-}
-.form-section-label__date::before {
-  content: '—';
-  margin-right: 10px;
-  color: var(--gold-deep);
-  font-weight: 400;
 }
 .form-section-label sup { font-size: 0.65em; top: -0.4em; }
 .form-row + .form-section-label { margin-top: 18px; }
@@ -1292,7 +1361,7 @@ a { color: inherit; text-decoration: none; }
 .footer__inner { max-width: 720px; margin: 0 auto; position: relative; }
 .footer__lamp {
   width: 100px;
-  margin: 0 auto 30px;
+  margin: 0 auto 12px;
   filter: drop-shadow(0 0 30px rgba(255, 200, 100, 0.5));
 }
 .footer__lamp svg { width: 100%; height: auto; }
@@ -1357,10 +1426,23 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   justify-content: center;
   margin: 4px 0;
+  animation: heartGlow 2.4s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(255, 90, 120, 0.55))
+          drop-shadow(0 0 18px rgba(245, 210, 122, 0.35));
 }
 .footer__heart svg {
   display: block;
-  animation: heartBeat 1.6s ease-in-out infinite;
+  animation: heartBeat 1.4s ease-in-out infinite;
+}
+@keyframes heartGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(255, 90, 120, 0.45))
+            drop-shadow(0 0 14px rgba(245, 210, 122, 0.30));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(255, 90, 120, 0.85))
+            drop-shadow(0 0 28px rgba(255, 200, 100, 0.6));
+  }
 }
 
 .footer__infinity {
@@ -1445,25 +1527,15 @@ a { color: inherit; text-decoration: none; }
   .form-row { grid-template-columns: 1fr; gap: 24px; }
   .form-col--guests .form-input { max-width: 160px; }
 
-  /* Stack the section label title + date on two lines so it never crowds the line */
+  /* Section label: title + date already stack on two lines; tighten for phone */
   .form-section-label {
     grid-template-columns: minmax(14px, 1fr) auto minmax(14px, 1fr);
     gap: 12px;
     margin: 6px 0 20px;
   }
   .form-row + .form-section-label { margin-top: 14px; }
-  .form-section-label__title,
-  .form-section-label__date {
-    display: block;
-    font-size: 0.78rem;
-    letter-spacing: 2px;
-  }
-  .form-section-label__date {
-    margin-left: 0;
-    margin-top: 4px;
-    font-size: 0.72rem;
-  }
-  .form-section-label__date::before { display: none; }
+  .form-section-label__title { font-size: 0.8rem; letter-spacing: 2.5px; }
+  .form-section-label__date  { font-size: 0.72rem; letter-spacing: 2px; }
 
   /* ---- invitation / reception cards: slight compaction for phone ---- */
   .invite-card + .invite-card { margin-top: 32px; }
